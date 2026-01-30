@@ -20,7 +20,7 @@ def create_dummy_pdf(path, is_valid=True):
         content = b"This is not a PDF, just random text."
     
     with open(path, 'wb') as f:
-        f.write(content)
+        f.write(content)   
 
 def main():
     test_dir = os.path.join(os.path.dirname(__file__), "temp_test_pdfs")
