@@ -13,12 +13,12 @@ if exist "venv\Scripts\activate.bat" (
     echo WARNING: Virtual environment not found. Using system Python.
 )
 
-REM Run the Python Script
-python main.py
+REM Run the Python Script and log output
+echo [%DATE% %TIME%] Starting execution >> launcher.log
+python main.py >> launcher.log 2>&1
 
-REM Optional: Pause only if error occurred
 if %ERRORLEVEL% NEQ 0 (
-    echo.
-    echo ERROR: The script encountered an error.
-    pause
+    echo [%DATE% %TIME%] ERROR: Exit code %ERRORLEVEL% >> launcher.log
+) else (
+    echo [%DATE% %TIME%] Success >> launcher.log
 )
