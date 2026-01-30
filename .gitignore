@@ -1,0 +1,15 @@
+# Secrets
+config.ini
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv
+env/
+venv/
+ENV/
+
+# Testing
+tests/temp_test_pdfs/
