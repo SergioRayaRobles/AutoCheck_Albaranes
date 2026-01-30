@@ -36,7 +36,6 @@ echo CRITICAL ERROR: Python is not installed on this system.
 echo Please install Python from https://www.python.org/downloads/
 echo Make sure to check "Add Python to PATH" during installation.
 echo ---------------------------------------------------
-pause
 exit /b 1
 
 :RUN
@@ -45,8 +44,8 @@ REM Run the script
 
 if %ERRORLEVEL% NEQ 0 (
     echo [%DATE% %TIME%] ERROR: Unknown failure. Exit code %ERRORLEVEL% >> %LOGFILE%
-    echo Error occurred. Check %LOGFILE% details.
-    pause
+    exit /b %ERRORLEVEL%
 ) else (
     echo [%DATE% %TIME%] Success >> %LOGFILE%
+    exit /b 0
 )
